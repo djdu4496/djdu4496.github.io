@@ -4,7 +4,7 @@ title: Class
 slug: class
 menu: true
 submenu: true
-order: 4
+order: 2
 description: >
-  수업  
+  수업
 ---
