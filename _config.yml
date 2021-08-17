@@ -2,7 +2,7 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title: uzi의 블로그
+title: DJDU 기술블로그
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
@@ -13,12 +13,13 @@ url: https://djdu4496.github.io/
 baseurl: ""
 
 # A very short description of your page
-tagline: "우지의 기술블로그"
+tagline: "DJDU의 기술블로그"
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description: >
   프론트엔드 개발자 지망생
+  <br/>
   개발공부기록 저장소
 
 # This should be the same author as first entry in `_data/authors.yml`
@@ -27,7 +28,7 @@ author:
   email: xxxx@xxxx.com
 
 # Fallback image and color
-image: /assets/img/bg.JPG
+image: /assets/img/jeju.jpg
 color: "#4f86aa"
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
