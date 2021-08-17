@@ -2,7 +2,7 @@
 #  User configuration
 # -----------------------------------------------------------------------------
 
-title: DJDU 기술블로그
+title: DJDU-Blog
 
 # The unique resource location of your page.
 # Set to `https://<username>.github.io` when hosting on GitHub Pages
@@ -28,7 +28,7 @@ author:
   email: xxxx@xxxx.com
 
 # Fallback image and color
-image: /assets/img/jeju.jpg
+image: /assets/img/jeju.JPG
 color: "#4f86aa"
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
@@ -53,7 +53,7 @@ disqus: True
 disqus_shortname: xxxx
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright: "&copy; 2021.08. by 지우"
+copyright: "&copy; 2021.08. by DJDU"
 
 # Format of the permalinks
 permalink:
