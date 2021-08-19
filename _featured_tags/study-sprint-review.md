@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: REACT
-slug: react
+title: SPRINT REVIEW
+slug: sprint-review
 category: study
 menu: false
-order: 1
+order: 2
 ---
