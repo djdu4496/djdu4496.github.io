@@ -10,36 +10,69 @@ published: true
 ---
 
 - <span style="font-size:20px;color:gray">Contents</span>
+
   - [Sprint Review](#12)
+
     - [1. Class component로 작성된 리액트 앱을 React hooks와 Redux를 이용해서 리팩토링할 수 있나요?](#1)
     - [2. Redux를 통한 상태관리의 장점을 이해하고 있나요?](#2)
     - [3. Redux의 구성요소(action, reducer, store, view 등..)들의 데이터 흐름이 어떤 순서로 이루어지는 지 이해하고 있나요?](#3)
     - [4. Reducer의 주요 규칙을 이해하고 immutable 한 방식으로 state를 변경하는 이유를 이해하고 있나요?](#4)
     - [5. Redux의 3가지 원칙에 대해 이해하셨나요?](#5)
 
-# <span style="font-size:20px;color:gray">주요 개념</span>
-
-- [주요개념](#주요개념)
-
-# <span style="font-size:20px;color:gray">pure redux package</span>
-
-- [pure redux package](#pure-redux-package)
+  - [주요개념](#주요개념)
+  - [pure redux package](#pure-redux-package)
 
 ---
 
 # <span style="font-size:20px;color:DodgerBlue">1</span>
 
-<span style="color:gray">Class component로 작성된 리액트 앱을 React hooks와 Redux를 이용해서 리팩토링할 수 있나요?</span>
+<span style="color:DodgerBlue">Class component로 작성된 리액트 앱을 React hooks와 Redux를 이용해서 리팩토링할 수 있나요?</span>
 <br>
 
-## <span style="font-size:20px;color:black">React Hooks</span>
+class 컴포넌트는 `state`와 `life-cycle`을 가질 수 있었지만, functional 컴포넌트는 그렇지 못했습니다. functional component에서 state, life-cycle를 흉내내서 가질 수 있는 방법이 `React hooks`입니다.
 
-class 컴포넌트는 `state`와 `life-cycle`을 가질 수 있었지만,
-functional 컴포넌트는 그렇지 못했다.<br>
-functional component에서 state, life-cycle를 흉내내서 가질 수 있는 방법이 `React hooks`이다.
+- React Hooks
+  - useState 메소드를 통해 'state'를 가질 수 있습니다.
+  - useEffect 메소드를 통해 'life-cycle-API'를 가질 수 있습니다.
 
-- useState 메소드를 통해 'state'를 가질 수 있다
-- useEffect 메소드를 통해 'life-cycle-API'를 가질 수 있다
+<span style="color:darkblue">React</span>에서는 상태(`state`)와 속성(`props`)을 이용한 <span style="color:darkblue">컴포넌트 단위 개발 아키텍처</span>를 배웠다면 <span style="color:indianred">Redux</span>에서는 <span style="color:indianred">컴포넌트와 상태를 분리하는 패턴</span>을 배웁니다. 그동안에는 상태를 다루기 위해 컴포넌트 안에서 상태 변경 로직이 복잡하게 얽혀있는 경우가 많았습니다. 그러나 <span style="color:indianred">상태 변경 로직을 컴포넌트로부터 분리</span>하면, <span style="color:indianred">표현에 집중한 보다 단순한 함수 컴포넌트로 만들 수 있게</span> 될겁니다.<br>
+
+- <span style="color:indianred">Redux hooks</span>(<span style="color:indianred">useSelector</span>, <span style="color:indianred">useDispatch</span>)를 사용해 store 를 업데이트할 수 있습니다.
+
+  - useSelector: <span style="color:indianred">컴포넌트와 store에 저장된 state를 연결하는 메서드</span>
+  - useDispatch: <span style="color:indianred">Action객체를 reducer 함수에 전달하는 메서드</span>
+
+- useSelector 사용 예시
+
+  ```javascript
+  import React from "react";
+  import { useSelector } from "react-redux";
+
+  export const CounterComponent = () => {
+    const counter = useSelector((state) => state.counter);
+    return <div>{counter}</div>;
+  };
+  ```
+
+- useDispatch 사용 예시
+
+```javascript
+import React from "react";
+import { useDispatch } from "react-redux";
+
+export const CounterComponent = ({ value }) => {
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <span>{value}</span>
+      <button onClick={() => dispatch({ type: "increment-counter" })}>
+        Increment counter
+      </button>
+    </div>
+  );
+};
+```
 
 # <span style="font-size:20px;color:DodgerBlue">2</span>
 
@@ -66,6 +99,8 @@ functional component에서 state, life-cycle를 흉내내서 가질 수 있는 
    <br/>
 
 ![redux-flow](/assets/img/flow2.png)
+
+- [출처: 생활코딩(Redux - 2.3. 리덕스 여행의 지도 : action과 reducer)](https://www.youtube.com/watch?v=F_NLNBOqZrQ)
 
 ## <span style="font-size:20px;color:black">Case study</span>
 
@@ -141,6 +176,9 @@ functional component에서 state, life-cycle를 흉내내서 가질 수 있는 
 # <span style="font-size:20px;color:gray">pure redux package</span>
 
 - 블로그 서비스 데이터에 대한 상태 관리 구현 코드
+
+- `createStore` : Creates a Redux store that holds the complete state tree of your app. There should only be a single store in your app.
+  - 문법 : `createStore(reducer, [preloadedState], [enhancer])`
 
 ```javascript
 const { createStore } = require("redux");
