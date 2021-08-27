@@ -38,8 +38,11 @@ published: true
 - 기본 쿼리문
 - 데이터 베이스 명령어
 - 스키마
+
   - 데이터베이스에서 데이터를 정의하는 방법과 서로 다른 엔티티 간의 관계를 구성하는 방식입니다.
   - '어떤 데이터가 어떻게 표현되는가'가 중요합니다.
   - '엔티티'는 고유한 정보의 단위입니다.
   - '필드'는 행렬의 '열'에 해당합니다.
   - '레코드'는 행렬의 '행'에 해당합니다.
+
+- Error: the string "ER_BAD_DB_ERROR: Unknown database 'learnmysql'" was thrown, throw an Error :)
