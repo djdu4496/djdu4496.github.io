@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Database-1"
+title: "Database-2"
 subtitle: "database-and-sql"
-date: 2021-08-26 09:00:00 +0900
+date: 2021-08-30 09:00:00 +0900
 categories: study
 tags: sprint-review
 comments: true
