@@ -33,11 +33,18 @@
     "watchify": "3.9.0"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "brace-expansion": "^2.0.1",
     "color": "1.0.3",
     "core-js": "2.4.1",
     "elem-dataset": "1.1.1",
+    "fs.realpath": "^1.0.0",
+    "inflight": "^1.0.6",
     "katex": "0.7.1",
+    "outpipe": "^1.1.1",
     "rxjs": "5.4.1",
+    "through2": "^4.0.2",
     "web-animations-js": "2.2.5",
     "y-drawer": "6.1.1",
     "y-push-state": "6.3.0"
